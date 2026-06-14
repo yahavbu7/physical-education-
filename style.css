@@ -787,15 +787,85 @@ main { min-height: 60vh; }
 
 .ar-image-box img {
   max-width: 100%;
-  max-height: 160px;
   border-radius: 8px;
   object-fit: contain;
   display: none;
 }
 
+/* כשיש תמונה אמיתית */
+.ar-image-box--filled {
+  position: relative;
+  padding: 0;
+  border: none;
+  overflow: hidden;
+  min-height: 0;
+  box-shadow: 0 8px 30px rgba(26,39,68,0.15);
+}
+
+.ar-image-box--filled img {
+  display: block;
+  width: 100%;
+  max-height: none;
+  border-radius: 14px;
+}
+
+.ar-image-box--filled::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  border: 3px solid var(--orange);
+  pointer-events: none;
+}
+
+.ar-scan-tag {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--orange);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 20px;
+  z-index: 1;
+}
+
 .ar-image-box .placeholder-label {
   font-size: 13px;
   color: var(--text-muted);
+}
+
+/* כפתורי הורדת האפליקציה */
+.ar-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 1.25rem;
+}
+
+.ar-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--navy);
+  color: var(--white);
+  font-family: 'Heebo', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.ar-btn:hover {
+  background: var(--orange);
+  transform: translateY(-2px);
+}
+
+.ar-btn svg {
+  width: 18px;
+  height: 18px;
 }
 
 .ar-instructions {
