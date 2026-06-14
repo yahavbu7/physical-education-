@@ -105,6 +105,21 @@ body {
   display: block;
 }
 
+/* תמונה לרוחב (קבוצתית) — מסגרת מלבנית מעוגלת */
+.hero-photo-wrap--photo::before {
+  border-radius: 18px;
+  inset: -8px;
+  animation: none;
+  border-color: rgba(255,107,43,0.5);
+}
+
+.hero-photo-wrap--photo .hero-photo {
+  width: 300px;
+  height: 225px;
+  border-radius: 14px;
+  border-width: 3px;
+}
+
 .hero-photo-placeholder {
   width: 180px;
   height: 180px;
@@ -165,6 +180,27 @@ body {
   background: var(--orange);
   margin-top: 20px;
   transform: skewX(-12deg);
+}
+
+.hero-students {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.hero-students span {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,107,43,0.3);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.65);
+}
+
+.hero-students strong {
+  color: var(--white);
+  font-weight: 700;
 }
 
 /* ─── STICKY NAV ────────────────────────────────────────── */
@@ -1030,6 +1066,7 @@ footer strong { color: rgba(255,255,255,0.8); }
 .hero-title   { animation: slide-in 0.6s ease 0.25s both; }
 .hero-subtitle { animation: slide-in 0.6s ease 0.4s both; }
 .hero-line    { animation: slide-in 0.5s ease 0.55s both; }
+.hero-students { animation: slide-in 0.6s ease 0.7s both; }
 .hero-photo-wrap { animation: slide-in 0.6s ease 0.2s both; }
 
 @keyframes slide-in {
@@ -1046,6 +1083,15 @@ footer strong { color: rgba(255,255,255,0.8); }
   }
 
   .hero-line { margin: 20px auto 0; }
+
+  .hero-students { justify-content: center; }
+
+  .hero-photo-wrap--photo .hero-photo {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
 
   .nav-btn { padding: 0 16px 0 22px; font-size: 12px; }
   .nav-btn .nav-num { display: none; }
