@@ -362,6 +362,221 @@ main { min-height: 60vh; }
   border: none;
 }
 
+/* ─── LESSON PLAN (משימה 1) ─────────────────────────────── */
+.lesson-infographic {
+  display: block;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(26,39,68,0.18);
+  margin-bottom: 1rem;
+  cursor: zoom-in;
+}
+
+.lesson-infographic img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform var(--transition);
+}
+
+.lesson-infographic:hover img { transform: scale(1.02); }
+
+.lesson-infographic-zoom {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(26,39,68,0.85);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+.lesson-infographic-zoom svg { width: 15px; height: 15px; }
+
+
+.lesson-subhead {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--navy);
+  margin: 2.5rem 0 1.25rem;
+  position: relative;
+  padding-right: 16px;
+}
+
+.lesson-subhead::before {
+  content: '';
+  position: absolute;
+  right: 0; top: 50%;
+  transform: translateY(-50%) skewX(-12deg);
+  width: 5px; height: 24px;
+  background: var(--orange);
+}
+
+/* B.E.E.F cards */
+.beef-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.beef-card {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 1.5rem 1.25rem 1.25rem;
+  box-shadow: 0 4px 20px rgba(26,39,68,0.08);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.beef-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(26,39,68,0.14);
+}
+
+.beef-letter {
+  width: 48px; height: 48px;
+  background: var(--navy);
+  color: var(--orange);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 900;
+  margin-bottom: 14px;
+  transform: skewX(-6deg);
+}
+
+.beef-card h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+
+.beef-card p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* Lesson flow */
+.flow-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+}
+
+.flow-item {
+  background: var(--white);
+  border-radius: 14px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  box-shadow: 0 4px 20px rgba(26,39,68,0.08);
+  border-right: 5px solid var(--orange);
+}
+
+.flow-item.flow-game {
+  border-right-color: #2bb673;
+}
+
+.flow-time {
+  background: var(--navy);
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 4px;
+}
+
+.flow-stage {
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.flow-min {
+  color: var(--orange);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.flow-game .flow-min { color: #5dd99a; }
+
+.flow-body {
+  padding: 1.25rem 1.5rem;
+}
+
+.flow-do {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.flow-why, .flow-org {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.flow-why strong, .flow-org strong {
+  color: var(--navy);
+}
+
+/* Safety box */
+.safety-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: #fff8e1;
+  border: 1.5px solid #f5c869;
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.safety-icon {
+  width: 44px; height: 44px;
+  background: #f59e0b;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.safety-icon svg {
+  width: 24px; height: 24px;
+  stroke: var(--white);
+}
+
+.safety-box h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #92560a;
+  margin-bottom: 6px;
+}
+
+.safety-box p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #7a4f12;
+}
+
 /* ─── TASK CARDS ────────────────────────────────────────── */
 .task-card {
   background: var(--white);
@@ -777,4 +992,19 @@ footer strong { color: rgba(255,255,255,0.8); }
   .btn-primary { font-size: 0.9rem; padding: 12px 24px; }
 
   .play-btn { font-size: 0.95rem; padding: 14px 28px; }
+
+  .beef-grid { grid-template-columns: 1fr 1fr; }
+
+  .flow-item { grid-template-columns: 1fr; }
+
+  .flow-time {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 10px 1.25rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .beef-grid { grid-template-columns: 1fr; }
 }
